@@ -80,7 +80,7 @@ func Parse(r io.Reader, pkgName string) (*Report, error) {
 			// new test
 			cur = line[8:]
 			tests = append(tests, &Test{
-				Name:   line[8:],
+				Name:   strings.TrimSpace(line[8:]),
 				Result: FAIL,
 				Output: make([]string, 0),
 			})
